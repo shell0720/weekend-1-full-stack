@@ -49,6 +49,37 @@ router.post('/', function (req, res) {
   });
 });
 
+
+router.get('/total', function (req, res) {
+  // connect to DB
+  pg.connect(connectionString, function(err, client, done){
+    if (err) {
+      done();
+      console.log('Error connecting to DB: ', err);
+      res.status(500).send(err);
+    } else {
+      var result = [];
+      var query = client.query('SELECT salary FROM people;');
+
+      query.on('row', function(row){
+        result.push(row);
+        return result;
+      });
+
+      query.on('end', function() {
+        done();
+        res.send(result);
+      });
+
+      query.on('error', function(error) {
+        console.log('Error running query:', error);
+        done();
+        res.status(500).send(error);
+      });
+    }
+  })
+});
+
 router.get('/', function (req, res) {
   // connect to DB
   pg.connect(connectionString, function(err, client, done){
@@ -77,5 +108,6 @@ router.get('/', function (req, res) {
     }
   })
 });
+
 
 module.exports = router;
