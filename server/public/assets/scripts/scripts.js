@@ -3,6 +3,7 @@ var totalMonthlyCost = 0;
 $(document).ready(function () {
   $("#employeeForm").on("submit", handleSubmit);
   $(".people").on('click', 'button', deleteClick);
+  receiveData();
 
 });
 
@@ -65,7 +66,7 @@ function deleteClick() {
   var monthlySalary = $(this).data("personToDelete");
   totalMonthlyCost -= monthlySalary;
   totalMonthlySalary();
-  $(this).parent().remove();
+  $(this).parent().hide();
 }
 
 function totalMonthlySalary () {
