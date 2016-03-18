@@ -1,0 +1,23 @@
+form {
+  background-color: tomato;
+font-size: 20px;
+padding: 10px;
+height: 300px;
+width: auto;
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+.people {
+  background-color: lightgrey;
+  padding-bottom: 10px;
+}
+
+#number, #salary, #lastname, #firstname, #title {
+  display: block;;
+}

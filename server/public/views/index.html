@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Employee Form</title>
+  <link rel="stylesheet" href="/assets/styles/style.css"/>
+  <script type="text/javascript" src="/vendors/jquery.min.js"></script>
+  <script type="text/javascript" src="/assets/scripts/scripts.js"></script>
+</head>
+
+<body>
+
+
+  <h1 class="totalEmployeeSalary">TOTAL MONTHLY SALARY: </h1>
+
+
+  <form id="employeeForm">
+
+      <label for="firstname">Enter your first name: </label>
+      <input type="text" id="firstname" name="firstname" placeholder="First Name"/>
+
+
+
+      <label for="lastname">Enter your last name: </label>
+      <input type="text" id="lastname" name="lastname" placeholder="Last Name"/>
+
+
+
+      <label for="number">Enter your employee ID: </label>
+      <input type="number" id="number" name="number" placeholder="Employee's ID"/>
+
+
+
+      <label for="title">Enter your job title: </label>
+      <input type="text" id="title" name="title" placeholder="Employee's job title"/>
+
+
+      <label for="salary">Enter your salary: </label>
+      <input type="number" id="salary" step="0.01" min= "0"  name="salary" placeholder="Employee's yearly salary"/>
+
+
+    <input type="submit" value="Submit Your Information" />
+
+  </form>
+
+  <div class= "people">
+
+  </div>
+</body>
+</html>
